@@ -13,14 +13,11 @@ void heapify(int arr[], int n, int i);
 void heap_sort(int arr[], int n);
 int heapify_steps(int arr[], int n, int i);
 int heap_sort_steps(int arr[], int n);
+void func();
 
 int main(int argc, char const *argv[])
 {
-    int *arr = generate_random_array(MAX);
-    // print_array(arr, MAX);
-    int steps = heap_sort_steps(arr, MAX);
-    // print_array(arr, MAX);
-    cout << "Steps: " << steps << endl;
+    func();
     return 0;
 }
 
@@ -115,3 +112,42 @@ int heap_sort_steps(int arr[], int n)
     return steps;
 }
 
+
+void func()
+{
+    ofstream outdata;
+
+    outdata.open("/home/blairi/development/projects/sorting-algorithms/heapsort/data/worst_case.txt");
+    if( !outdata ) { // file couldn't be opened
+        cerr << "Error: file could not be opened" << endl;
+        exit(1);
+    }
+
+    int steps{};
+
+    for (int i = 1; i <= MAX; i++)
+    {    
+        int *arr = generate_inverted_array( i );
+        steps = heap_sort_steps(arr, i);
+        outdata << i << ":" << steps << endl;
+    }
+    outdata.close();
+
+    outdata.open("/home/blairi/development/projects/sorting-algorithms/heapsort/data/best_case.txt");
+    for (int i = 1; i <= MAX; i++)
+    {    
+        int *arr = generate_sorted_array( i );
+        steps = heap_sort_steps(arr, i);
+        outdata << i << ":" << steps << endl;
+    }
+    outdata.close();
+
+    outdata.open("/home/blairi/development/projects/sorting-algorithms/heapsort/data/average_case.txt");
+    for (int i = 1; i <= MAX; i++)
+    {    
+        int *arr = generate_random_array( i );
+        steps = heap_sort_steps(arr, i);
+        outdata << i << ":" << steps << endl;
+    }
+    outdata.close();
+}
