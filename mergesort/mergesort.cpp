@@ -162,7 +162,7 @@ void func()
 {
     ofstream outdata;
 
-    outdata.open("/home/blairi/development/projects/sorting-algorithms/mergesort/data/worst_case.txt");
+    outdata.open( PATH + "/mergesort/data/worst_case.txt" );
     if( !outdata ) { // file couldn't be opened
         cerr << "Error: file could not be opened" << endl;
         exit(1);
@@ -178,7 +178,7 @@ void func()
     }
     outdata.close();
 
-    outdata.open("/home/blairi/development/projects/sorting-algorithms/mergesort/data/best_case.txt");
+    outdata.open( PATH + "/mergesort/data/best_case.txt" );
     for (int i = 1; i <= MAX; i++)
     {    
         int *arr = generate_sorted_array( i );
@@ -187,7 +187,7 @@ void func()
     }
     outdata.close();
 
-    outdata.open("/home/blairi/development/projects/sorting-algorithms/mergesort/data/average_case.txt");
+    outdata.open( PATH + "/mergesort/data/average_case.txt" );
     for (int i = 1; i <= MAX; i++)
     {    
         int *arr = generate_random_array( i );

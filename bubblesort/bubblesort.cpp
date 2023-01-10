@@ -15,7 +15,7 @@ int main(int argc, char const *argv[])
 {
     ofstream outdata;
 
-    outdata.open("/home/blairi/development/projects/sorting-algorithms/bubblesort/data/worst_case.txt");
+    outdata.open( PATH + "/bubblesort/data/worst_case.txt" );
     if( !outdata ) { // file couldn't be opened
         cerr << "Error: file could not be opened" << endl;
         exit(1);
@@ -31,7 +31,7 @@ int main(int argc, char const *argv[])
     }
     outdata.close();
 
-    outdata.open("/home/blairi/development/projects/sorting-algorithms/bubblesort/data/best_case.txt");
+    outdata.open( PATH + "/bubblesort/data/best_case.txt" );
     for (int i = 1; i <= MAX; i++)
     {    
         int *arr = generate_sorted_array( i );
@@ -40,7 +40,7 @@ int main(int argc, char const *argv[])
     }
     outdata.close();
 
-    outdata.open("/home/blairi/development/projects/sorting-algorithms/bubblesort/data/average_case.txt");
+    outdata.open( PATH + "/bubblesort/data/average_case.txt" );
     for (int i = 1; i <= MAX; i++)
     {    
         int *arr = generate_random_array( i );

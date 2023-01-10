@@ -116,12 +116,7 @@ int heap_sort_steps(int arr[], int n)
 void func()
 {
     ofstream outdata;
-
-    outdata.open("/home/blairi/development/projects/sorting-algorithms/heapsort/data/worst_case.txt");
-    if( !outdata ) { // file couldn't be opened
-        cerr << "Error: file could not be opened" << endl;
-        exit(1);
-    }
+    outdata.open( PATH + "/heapsort/data/worst_case.txt" );
 
     int steps{};
 
@@ -133,7 +128,7 @@ void func()
     }
     outdata.close();
 
-    outdata.open("/home/blairi/development/projects/sorting-algorithms/heapsort/data/best_case.txt");
+    outdata.open( PATH + "/heapsort/data/best_case.txt" );
     for (int i = 1; i <= MAX; i++)
     {    
         int *arr = generate_sorted_array( i );
@@ -142,7 +137,7 @@ void func()
     }
     outdata.close();
 
-    outdata.open("/home/blairi/development/projects/sorting-algorithms/heapsort/data/average_case.txt");
+    outdata.open( PATH + "/heapsort/data/average_case.txt" );
     for (int i = 1; i <= MAX; i++)
     {    
         int *arr = generate_random_array( i );
