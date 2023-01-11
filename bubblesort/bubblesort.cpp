@@ -1,7 +1,7 @@
 #include <iostream>
 #include <fstream>
 
-#include "./../helpers.cpp"
+#include "./../helpers/helpers.h"
 
 using namespace std;
 
