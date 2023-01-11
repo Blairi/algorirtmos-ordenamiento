@@ -1,16 +1,15 @@
 #include <iostream>
-#include <string>
 
-using namespace std;
+#include "helpers.h"
 
 
-const string PATH = "/home/blairi/development/projects/sorting-algorithms";
+const std::string PATH = "/home/blairi/development/projects/sorting-algorithms";
 
 
 void print_array(int arr[], int size)
 {
-    for (int i = 0; i < size; i++) cout << arr[i] << " ";
-    cout << endl;
+    for (int i = 0; i < size; i++) std::cout << arr[i] << " ";
+    std::cout << std::endl;
 }
 
 
