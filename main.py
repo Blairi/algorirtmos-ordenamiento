@@ -38,8 +38,10 @@ def menu() -> None:
         print("1. Bubble sort")
         print("2. Merge sort")
         print("3. Heap sort")
+        print("4. Quick sort")
+
         opc = input(": ")
-        if not opc.isdigit():
+        if not opc.isdigit() or ( opc.isdigit() and int(opc) not in range(0, 5) ):
             print("Illegal choice.")
             continue
         
@@ -60,11 +62,17 @@ def menu() -> None:
             n_worst, steps_worst = get_data(f"{PATH}/mergesort/data/worst_case.txt")
             n_average, steps_average = get_data(f"{PATH}/mergesort/data/average_case.txt")
         
-        if opc == 3:
+        if opc == 3: # Heap sort
             title = "Heap sort"
             n_best, steps_best = get_data(f"{PATH}/heapsort/data/best_case.txt")
             n_worst, steps_worst = get_data(f"{PATH}/heapsort/data/worst_case.txt")
             n_average, steps_average = get_data(f"{PATH}/heapsort/data/average_case.txt")
+        
+        if opc == 4: # Quick sort
+            title = "Quick sort"
+            n_best, steps_best = get_data(f"{PATH}/quicksort/data/best_case.txt")
+            n_worst, steps_worst = get_data(f"{PATH}/quicksort/data/worst_case.txt")
+            n_average, steps_average = get_data(f"{PATH}/quicksort/data/average_case.txt")
         
         # Graph building...
         fig, (ax0, ax1, ax2) = plt.subplots(nrows=1, ncols=3, figsize=(12, 6))
