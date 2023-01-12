@@ -6,6 +6,12 @@
 const std::string PATH = "/home/blairi/development/projects/sorting-algorithms";
 
 
+void initialize_array(int *arr, int n)
+{
+    for (int i = 0; i < n; i++) arr[i] = 0;
+}
+
+
 void print_array(int arr[], int size)
 {
     for (int i = 0; i < size; i++) std::cout << arr[i] << " ";

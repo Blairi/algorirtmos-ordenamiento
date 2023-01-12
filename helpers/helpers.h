@@ -6,6 +6,7 @@
 extern const std::string PATH;
 
 void print_array(int arr[], int size);
+void initialize_array(int *arr, int n);
 int *generate_random_array(int size);
 int *generate_inverted_array(int size);
 int *generate_sorted_array(int size);
