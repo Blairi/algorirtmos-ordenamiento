@@ -18,14 +18,7 @@ int quick_sort_steps(int arr[], int low, int high);
 
 int main(int argc, char const *argv[])
 {
-    // func();
-    int *arr = generate_sorted_array(MAX);
-    // int *arr = generate_random_array(MAX);
-    // int *arr = generate_inverted_array(MAX);
-    print_array(arr, MAX);
-    int x = quick_sort_steps(arr, 0, MAX - 1);
-    print_array(arr, MAX);
-    cout << "Steps: " << x << endl;
+    func();
     return 0;
 }
 
@@ -121,28 +114,31 @@ void func()
 
     int steps{};
 
-    for (int i = 1; i <= MAX; i++)
-    {    
-        int *arr = generate_inverted_array( i );
-        //
-        outdata << i << ":" << steps << endl;
-    }
-    outdata.close();
-
-    outdata.open( PATH + "/quicksort/data/best_case.txt" );
+    // Worst case
     for (int i = 1; i <= MAX; i++)
     {    
         int *arr = generate_sorted_array( i );
-        //
+        steps = quick_sort_steps(arr, 0, i - 1);
         outdata << i << ":" << steps << endl;
     }
     outdata.close();
 
-    outdata.open( PATH + "/quicksort/data/average_case.txt" );
+    // Best case
+    outdata.open( PATH + "/quicksort/data/best_case.txt" );
     for (int i = 1; i <= MAX; i++)
     {    
         int *arr = generate_random_array( i );
-        //
+        steps = quick_sort_steps(arr, 0, i - 1);
+        outdata << i << ":" << steps << endl;
+    }
+    outdata.close();
+
+    // Average case
+    outdata.open( PATH + "/quicksort/data/average_case.txt" );
+    for (int i = 1; i <= MAX; i++)
+    {
+        int *arr = generate_random_array( i );
+        steps = quick_sort_steps(arr, 0, i - 1);
         outdata << i << ":" << steps << endl;
     }
     outdata.close();
