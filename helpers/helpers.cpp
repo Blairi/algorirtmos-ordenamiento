@@ -22,7 +22,7 @@ void print_array(int arr[], int size)
 int *generate_random_array(int size)
 {
     int *array = new int[size];
-    for (int i = 0; i < size; i++) array[i] = rand() % size;
+    for (int i = 0; i < size; i++) array[i] = rand() % size + 1;
     return array;
 }
 
