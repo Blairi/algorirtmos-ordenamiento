@@ -11,14 +11,15 @@ const int MAX = 10;
 
 void func();
 int *counting_sort(int A[], int n, int high);
+int counting_sort_steps(int A[], int n, int high);
 
 int main(int argc, char const *argv[])
 {
     // func();
     int *arr = generate_inverted_array(MAX);
     print_array(arr, MAX);
-    int *sorted = counting_sort(arr, MAX, 10);
-    print_array(sorted, MAX);
+    int x = counting_sort_steps(arr, MAX, 10);
+    cout << "Steps: " << x << endl;
     return 0;
 }
 
@@ -46,9 +47,52 @@ int *counting_sort(int A[], int n, int high)
         B[ C[A[i]] - 1 ] = A[i];
         C[ A[i] ] = C[ A[i] ] - 1;
     }
+
+    delete[] C;
     
     // Return array copy already sorted of original array
     return B;
+}
+
+
+int counting_sort_steps(int A[], int n, int high)
+{
+    int steps = 0;
+
+    // Arrays creating
+    int *C = new int[ high + 1 ];
+    int *B = new int[ n ];
+
+    // Initialize them
+    initialize_array(C, high + 1);
+    initialize_array(B, n);
+
+    // Counting
+    for (int i = 0; i < n; i++)
+    {
+        C[ A[i] ] = C[ A[i] ] + 1;
+
+        steps ++;
+    }
+    
+    for (int i = 1; i < high + 1; i++)
+    {
+        C[i] = C[i] + C[i - 1];
+
+        steps ++;
+    }
+    
+    // Sorting
+    for (int i = n - 1; i != -1; i--)
+    {
+        B[ C[A[i]] - 1 ] = A[i];
+        C[ A[i] ] = C[ A[i] ] - 1;
+    }
+
+    delete[] C;
+    delete[] B;
+
+    return steps;
 }
 
 
