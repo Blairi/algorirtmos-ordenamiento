@@ -58,7 +58,7 @@ $ g++ ./{algorithm}/{algorithm}.cpp ./helpers/helpers.h ./helpers/helpers.cpp -o
 ```
 ### Windows
 ```
-$ g++ ./{algorithm}/{algorithm}.cpp ./helpers/helpers.h ./helpers/helpers.cpp -o ./out/{algorithm}.exe
+g++ ./{algorithm}/{algorithm}.cpp ./helpers/helpers.h ./helpers/helpers.cpp -o ./out/{algorithm}.exe
 ```
 
 Example:
@@ -74,7 +74,7 @@ $ ./out/{algorithm}
 ```
 ### Windows
 ```
-$ ./out/{algorithm}.exe
+./out/{algorithm}.exe
 ```
 
 Example:
