@@ -39,9 +39,10 @@ def menu() -> None:
         print("2. Merge sort")
         print("3. Heap sort")
         print("4. Quick sort")
+        print("5. Counting sort")
 
         opc = input(": ")
-        if not opc.isdigit() or ( opc.isdigit() and int(opc) not in range(0, 5) ):
+        if not opc.isdigit() or ( opc.isdigit() and int(opc) not in range(0, 6) ):
             print("Illegal choice.")
             continue
         
@@ -73,6 +74,12 @@ def menu() -> None:
             n_best, steps_best = get_data(f"{PATH}/quicksort/data/best_case.txt")
             n_worst, steps_worst = get_data(f"{PATH}/quicksort/data/worst_case.txt")
             n_average, steps_average = get_data(f"{PATH}/quicksort/data/average_case.txt")
+        
+        if opc == 5: # Counting sort
+            title = "Counting sort"
+            n_best, steps_best = get_data(f"{PATH}/countingsort/data/best_case.txt")
+            n_worst, steps_worst = get_data(f"{PATH}/countingsort/data/worst_case.txt")
+            n_average, steps_average = get_data(f"{PATH}/countingsort/data/average_case.txt")
         
         # Graph building...
         fig, (ax0, ax1, ax2) = plt.subplots(nrows=1, ncols=3, figsize=(12, 6))
