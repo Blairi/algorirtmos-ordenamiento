@@ -13,6 +13,40 @@ int bubble_sort_steps(int arr[], int n);
 
 int main(int argc, char const *argv[])
 {
+    func();
+    return 0;
+}
+
+
+void bubble_sort(int arr[], int n)
+{
+    for (int i = 0; i < n - 1; i++)
+        for (int j = 0; j < n - i - 1; j++)
+            if (arr[i] > arr[j + 1]) swap(arr[j], arr[j + 1]);
+}
+
+
+int bubble_sort_steps(int arr[], int n)
+{
+    int steps {0};
+    for (int i = 0; i < n - 1; i++)
+    {
+        for (int j = 0; j < n - i - 1; j++)
+        {
+            steps++;
+            if (arr[j] > arr[j + 1])
+            {
+                swap(arr[j], arr[j + 1]);
+                steps++;
+            }
+        }
+    }
+    return steps;
+}
+
+
+void func()
+{
     ofstream outdata;
 
     outdata.open( PATH + "/bubblesort/data/worst_case.txt" );
@@ -48,33 +82,4 @@ int main(int argc, char const *argv[])
         outdata << i << ":" << steps << endl;
     }
     outdata.close();
-
-    return 0;
-}
-
-
-void bubble_sort(int arr[], int n)
-{
-    for (int i = 0; i < n - 1; i++)
-        for (int j = 0; j < n - i - 1; j++)
-            if (arr[i] > arr[j + 1]) swap(arr[j], arr[j + 1]);
-}
-
-
-int bubble_sort_steps(int arr[], int n)
-{
-    int steps {0};
-    for (int i = 0; i < n - 1; i++)
-    {
-        for (int j = 0; j < n - i - 1; j++)
-        {
-            steps++;
-            if (arr[j] > arr[j + 1])
-            {
-                swap(arr[j], arr[j + 1]);
-                steps++;
-            }
-        }
-    }
-    return steps;
 }
