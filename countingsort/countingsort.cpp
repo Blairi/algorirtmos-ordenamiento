@@ -6,7 +6,7 @@
 using namespace std;
 
 
-const int MAX = 10;
+const int MAX = 1000;
 
 
 void func();
@@ -15,11 +15,7 @@ int counting_sort_steps(int A[], int n, int high);
 
 int main(int argc, char const *argv[])
 {
-    // func();
-    int *arr = generate_inverted_array(MAX);
-    print_array(arr, MAX);
-    int x = counting_sort_steps(arr, MAX, 10);
-    cout << "Steps: " << x << endl;
+    func();
     return 0;
 }
 
@@ -111,8 +107,8 @@ void func()
     // Worst case
     for (int i = 1; i <= MAX; i++)
     {    
-        int *arr = generate_sorted_array( i );
-        // steps = quick_sort_steps(arr, 0, i - 1);
+        int *arr = generate_inverted_array(i);
+        steps = counting_sort_steps(arr, i, i);
         outdata << i << ":" << steps << endl;
     }
     outdata.close();
@@ -121,8 +117,8 @@ void func()
     outdata.open( PATH + "/countingsort/data/best_case.txt" );
     for (int i = 1; i <= MAX; i++)
     {    
-        int *arr = generate_random_array( i );
-        // steps = quick_sort_steps(arr, 0, i - 1);
+        int *arr = generate_sorted_array(i);
+        steps = counting_sort_steps(arr, i, i);
         outdata << i << ":" << steps << endl;
     }
     outdata.close();
@@ -132,7 +128,7 @@ void func()
     for (int i = 1; i <= MAX; i++)
     {
         int *arr = generate_random_array( i );
-        // steps = quick_sort_steps(arr, 0, i - 1);
+        steps = counting_sort_steps(arr, i, i);
         outdata << i << ":" << steps << endl;
     }
     outdata.close();
