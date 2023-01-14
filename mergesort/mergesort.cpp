@@ -88,7 +88,6 @@ int merge_sort_steps(int arr[], int l, int h)
 {
     int steps = 0;
     if (l < h){
-        steps ++;
         int m = l + (h - l) / 2;
         steps += merge_sort_steps(arr, l, m);
         steps += merge_sort_steps(arr, m + 1, h);
