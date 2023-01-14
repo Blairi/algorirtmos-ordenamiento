@@ -4,6 +4,7 @@
 - [Requirements](#requirements)
 - [Quick start](#quickstart)
 - [Compile and run](#compileandrun)
+- [Analysis](#analysis)
 
 ## Requirements. <a name="requirements"></a>
 To visualize the time complexity graphs with Python:
@@ -81,3 +82,6 @@ Example:
 ```
 $ ./out/bubblesort
 ```
+## Analysis. <a name="analysis"></a>
+## Bubble sort
+![Bubble sort analisys](./analysis/bubblesort.png)
