@@ -7,6 +7,7 @@ using namespace std;
 
 const int MAX = 1000;
 
+void func();
 void bubble_sort(int arr[], int n);
 int bubble_sort_steps(int arr[], int n);
 
@@ -20,24 +21,24 @@ int main(int argc, char const *argv[])
 
 void bubble_sort(int arr[], int n)
 {
-    for (int i = 0; i < n - 1; i++)
-        for (int j = 0; j < n - i - 1; j++)
-            if (arr[i] > arr[j + 1]) swap(arr[j], arr[j + 1]);
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < n - 1; j++)
+            if (arr[j] > arr[j + 1]) swap(arr[j], arr[j + 1]);
 }
 
 
 int bubble_sort_steps(int arr[], int n)
 {
     int steps {0};
-    for (int i = 0; i < n - 1; i++)
+    for (int i = 0; i < n; i++)
     {
-        for (int j = 0; j < n - i - 1; j++)
+        steps++;
+        for (int j = 0; j < n - 1; j++)
         {
             steps++;
             if (arr[j] > arr[j + 1])
             {
                 swap(arr[j], arr[j + 1]);
-                steps++;
             }
         }
     }
