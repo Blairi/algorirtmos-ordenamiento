@@ -82,6 +82,8 @@ Example:
 ```
 $ ./out/bubblesort
 ```
-## Analysis. <a name="analysis"></a>
-## Bubble sort
+# Analysis. <a name="analysis"></a>
+## Index
+- [Bubble sort](#bubblesort)
+## Bubble sort <a name="bubblesort"></a>
 ![Bubble sort analisys](./analysis/bubblesort.png)
