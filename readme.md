@@ -83,7 +83,14 @@ Example:
 $ ./out/bubblesort
 ```
 # Analysis. <a name="analysis"></a>
+Using RAM Model Analysis.
 ## Index
 - [Bubble sort](#bubblesort)
+- [Merge sort](#mergesort)
 ## Bubble sort <a name="bubblesort"></a>
 ![Bubble sort analisys](./analysis/bubblesort.png)
+![Time complexity bubblesort](./graphs/bubblesort_graph.png)
+## Merge sort <a name="mergesort"></a>
+![Merge analisys](./analysis/mergesort1.png)
+![Merge sort analisys](./analysis/mergesort2.png)
+![Time complexity mergesort](./graphs/mergesort_graph.png)
