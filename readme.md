@@ -4,6 +4,7 @@
 - [Requirements](#requirements)
 - [Quick start](#quickstart)
 - [Compile and run](#compileandrun)
+- [How project works ?](#projectworks)
 - [Analysis](#analysis)
 
 ## Requirements. <a name="requirements"></a>
@@ -82,6 +83,13 @@ Example:
 ```
 $ ./out/bubblesort
 ```
+## How project works ? <a name="projectworks"></a>
+Implementations of the sorting algorithms in C++ are given a counter to count the number of steps they take to perform a sort. With counters we can check their efficiency.
+
+Then we create 3 files for each algorithm, these correspond to the worst, best and average case of them. The number of instances and the number of steps taken to order those instances have been saved.
+
+To display the plots we use Python with matplotlib, reading the generated files with C++.
+
 # Analysis. <a name="analysis"></a>
 Using RAM Model Analysis.
 ## Index
