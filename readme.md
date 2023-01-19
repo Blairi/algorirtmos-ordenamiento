@@ -95,6 +95,7 @@ Using RAM Model Analysis.
 ## Index
 - [Bubble sort](#bubblesort)
 - [Merge sort](#mergesort)
+- [Counting sort](#countingsort)
 ## Bubble sort <a name="bubblesort"></a>
 ![Bubble sort analisys](./analysis/bubblesort.png)
 ![Time complexity bubblesort](./graphs/bubblesort_graph.png)
@@ -102,3 +103,6 @@ Using RAM Model Analysis.
 ![Merge analisys](./analysis/mergesort1.png)
 ![Merge sort analisys](./analysis/mergesort2.png)
 ![Time complexity mergesort](./graphs/mergesort_graph.png)
+## Counting sort <a name="countingsort"></a>
+![Counting sort analisys](./analysis/countingsort.png)
+![Time complexity countingsort](./graphs/countingsort_graph.png)
